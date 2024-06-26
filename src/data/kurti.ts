@@ -16,11 +16,12 @@ export const getLastDelTime = async () => {
                 owner: 'DK@123',
             }
         });
+        const currTime = await getCurrTime();
         if(!party) {
             party = await db.deletetime.create({
                 data: {
                     owner: 'DK@123',
-                    time: getCurrTime(),
+                    time: currTime,
                 }
             });
         }
