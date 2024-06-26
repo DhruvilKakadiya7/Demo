@@ -41,7 +41,8 @@ export const kurtiAddition = async (
     const price = await db.prices.create({
         data: obj
     });
-    dataWithTime['pricesId'] = price.id
+    dataWithTime['pricesId'] = price.id;
+    dataWithTime['reservedSizes'] = [];
     await db.kurti.create({
         data: dataWithTime
     });

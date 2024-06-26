@@ -106,12 +106,14 @@ function KurtiListPage() {
                     let prom2 = fetch(`/api/kurti/getByCategory?category=${code}`);
                     const [resPage, response2] = await Promise.all([prom1, prom2]);
                     const result2 = await response2.json();
+                    console.log(result2);
                     for(let i = 0; i < result2.data.length || 0; i++) {
                         result2.data[i].countOfPiece = 0;
                         let cnt = 0;
                         for (let j = 0; j < result2.data[i].sizes.length || 0; j++) {
                             cnt += result2.data[i].sizes[j].quantity;
                         }
+                        // if (data[i].reservedSizes)
                         for (let j = 0; j < result2.data[i].reservedSizes.length || 0; j++) {
                             cnt -= result2.data[i].reservedSizes[j].quantity;
                         }

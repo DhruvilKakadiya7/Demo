@@ -3,10 +3,9 @@ import { getCurrTime } from "./kurti";
 
 export const migrate3 = async () => {
     try {
-        const currTime = await getCurrTime();
         await db.kurti.updateMany({
             data: {
-                lastUpdatedTime: currTime
+                reservedSizes: []
             }
         });
         return {success: "updated all kurti"}

@@ -11,11 +11,19 @@ export const getCurrTime = async () => {
 export const getLastDelTime = async () => {
     try {
         // console.log('debg', cat);
-        const party: any = await db.deletetime.findUnique({
+        let party: any = await db.deletetime.findUnique({
             where: {
                 owner: 'DK@123',
             }
         });
+        if(!party) {
+            party = await db.deletetime.create({
+                data: {
+                    owner: 'DK@123',
+                    time: getCurrTime(),
+                }
+            });
+        }
         return party;
     } catch {
         return null;
@@ -84,7 +92,10 @@ export const getCode = async (cat: string) => {
 
 export const getKurtiCountWithoutDeleted = async (cat: string) => {
     try {
-        const party = await db.kurti.count({ where: { category: cat, isDeleted: false } });
+        const party = await db.kurti.count({ where: { category: {
+            mode: 'insensitive',
+            equals: cat
+        }, isDeleted: false } });
 
         // if (cat === "KTD") {
         //     return party + 2;

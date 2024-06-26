@@ -16,11 +16,11 @@ export const Header = ({ label }: HeaderProps) => {
     return (
         <div className="w-full flex flex-col gap-y-2 items-center justify-center">
             <div className="flex flex-row items-center">
-                <Logo/>
+                {/* <Logo/> */}
                 <h1 className={
                     cn("text-3xl font-semibold", font.className)
                 }>
-                    <a href="/">RADHE BEUTIC</a>
+                    <a href="/">Demo</a>
                 </h1>
             </div>
 

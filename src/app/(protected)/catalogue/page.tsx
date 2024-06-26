@@ -144,9 +144,9 @@ const ListPage = () => {
     };
 
     const fetchUpdatedData = async () => {
-        let storedTime: any = localStorage.getItem('radhe-time-1');
-        let storedDelTime: any = localStorage.getItem('radhe-del-time');
-        let storedData: any = localStorage.getItem('radhe-data');
+        let storedTime: any = localStorage.getItem('demo-1');
+        let storedDelTime: any = localStorage.getItem('demo-time');
+        let storedData: any = localStorage.getItem('demo-data');
         // console.log(storedTime, storedData);
         const currTime = await getCurrTime();
         let tempRes: any = await fetch(`/api/kurti/deletetime`);
@@ -182,11 +182,11 @@ const ListPage = () => {
                 }
             });
             setKurtiData(updatedArray);
-            localStorage.setItem('radhe-time-1', JSON.stringify(currTime.toISOString()));
+            localStorage.setItem('demo-1', JSON.stringify(currTime.toISOString()));
             let store = await JSON.stringify(updatedArray);
-            localStorage.setItem('radhe-data', store);
+            localStorage.setItem('demo-data', store);
             store = await JSON.stringify(tempRes.data.time);
-            localStorage.setItem('radhe-del-time', store);
+            localStorage.setItem('demo-time', store);
             return updatedArray;
         }
         else {
@@ -194,11 +194,11 @@ const ListPage = () => {
             const res = await res2.json();
             console.log(res.data);
             setKurtiData(res.data);
-            localStorage.setItem('radhe-time-1', JSON.stringify(currTime.toISOString()));
+            localStorage.setItem('demo-1', JSON.stringify(currTime.toISOString()));
             let store = await JSON.stringify(res.data);
-            localStorage.setItem('radhe-data', store);
+            localStorage.setItem('demo-data', store);
             store = await JSON.stringify(tempRes.data.time);
-            localStorage.setItem('radhe-del-time', store);
+            localStorage.setItem('demo-time', store);
             console.log('fetched again');
             return res.data;
         }
