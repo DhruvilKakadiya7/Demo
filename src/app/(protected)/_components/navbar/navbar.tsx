@@ -67,8 +67,8 @@ const Navbar = () => {
                             <a href="/">
                                 <Image
                                     src="/images/logoDemo2.png"
-                                    height="100"
-                                    width="100"
+                                    height="120"
+                                    width="120"
                                     alt="Logo"
                                 />
                             </a>
@@ -130,8 +130,8 @@ const Navbar = () => {
                             <a href="/">
                                 <Image
                                     src="/images/logoDemo2.png"
-                                    height="100"
-                                    width="100"
+                                    height="120"
+                                    width="120"
                                     alt="Logo"
                                 />
                             </a>
