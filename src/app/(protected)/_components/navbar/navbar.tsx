@@ -66,9 +66,9 @@ const Navbar = () => {
                         <div className='mt-[-1px]'>
                             <a href="/">
                                 <Image
-                                    src="/images/demo.jpg"
-                                    height="60"
-                                    width="60"
+                                    src="/images/logoDemo2.png"
+                                    height="100"
+                                    width="100"
                                     alt="Logo"
                                 />
                             </a>
@@ -129,9 +129,9 @@ const Navbar = () => {
                         <div className='mt-[-1px]'>
                             <a href="/">
                                 <Image
-                                    src="/images/TextLogo.png"
-                                    height="80"
-                                    width="80"
+                                    src="/images/logoDemo2.png"
+                                    height="100"
+                                    width="100"
                                     alt="Logo"
                                 />
                             </a>
